@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Каталог книг{% endblock %}
+{% block content %}
+  <div class="container mt-5">
+    <div class="header mb-4">
+      <h1><a href="/books">Каталог</a></h1>
+    </div>
+
+    <div class="row">
+      {% for book in books %}
+        <div class="book col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">{{ book.name }}</h3>
+              <p class="card-text">Автор: {{ book.author }}</p>
+              <p class="card-text">Дата публикации: {{ book.pub_date }}</p>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <div class="col-12">
+          <p>Книг с этой датой публикации нет.</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="navigation d-flex justify-content-between mt-4">
+      {% if prev_date %}
+        <a class="btn btn-primary" href="{% url 'book_detail' prev_date %}">&lt; {{ prev_date }}</a>
+      {% else %}
+        <span class="text-muted">Предыдущая дата: нет доступных книг.</span>
+      {% endif %}
+
+      {% if next_date %}
+        <a class="btn btn-primary" href="{% url 'book_detail' next_date %}">{{ next_date }} &gt;</a>
+      {% else %}
+        <span class="text-muted">Следующая дата: нет доступных книг.</span>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

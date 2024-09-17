@@ -1,0 +1,74 @@
+[
+  {
+    "model": "books.book",
+    "pk": 1,
+    "fields": {
+      "name": "Война и мир",
+      "author": "Л.Н. Толстой",
+      "pub_date": "2018-02-27"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 2,
+    "fields": {
+      "name": "1984",
+      "author": "Джордж Оруэл",
+      "pub_date": "2016-12-06"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 3,
+    "fields": {
+      "name": "Мастер и Маргарита",
+      "author": "Михаил Булгаков",
+      "pub_date": "1966-02-01"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 4,
+    "fields": {
+      "name": "Убить пересмешника",
+      "author": "Харпер Ли",
+      "pub_date": "1960-07-11"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 5,
+    "fields": {
+      "name": "Гордость и предубеждение",
+      "author": "Джейн Остин",
+      "pub_date": "1813-01-28"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 6,
+    "fields": {
+      "name": "451 градус по Фаренгейту",
+      "author": "Рэй Брэдбери",
+      "pub_date": "1953-10-19"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 7,
+    "fields": {
+      "name": "Великий Гэтсби",
+      "author": "Фрэнсис С. Фицджеральд",
+      "pub_date": "1925-04-10"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 8,
+    "fields": {
+      "name": "Дюна",
+      "author": "Фрэнк Герберт",
+      "pub_date": "1965-08-01"
+    }
+  }
+]
