@@ -1,0 +1,79 @@
+# примеры API-запросов
+
+@baseUrl = http://localhost:8000/api
+
+# получение объявлений
+GET {{baseUrl}}/advertisements/
+Content-Type: application/json
+
+###
+
+# создание объявления
+POST {{baseUrl}}/advertisements/
+Content-Type: application/json
+Authorization: Token 2ce6ae3f038b38d9e6ab860771476d729fc3bcd6
+
+{
+  "title": "Продам BMW 3 серии 320i, 1986",
+  "description": "Не бита, не крашена, 1 владелец, обслуживалась у официалов, пробег не смотан, как новая, сел и поехал, отдам почти бесплатно, звони!⁠⁠"
+}
+
+###
+
+# попытка удалить объявление
+DELETE {{baseUrl}}/advertisements/1/
+Content-Type: application/json
+Authorization: Token 2ce6ae3f038b38d9e6ab860771476d729fc3bcd6
+
+###
+
+# попытка поменять объявление
+PATCH {{baseUrl}}/advertisements/2/
+Content-Type: application/json
+Authorization: Token 2ce6ae3f038b38d9e6ab860771476d729fc3bcd6
+
+{
+  "status": "CLOSED"
+}
+
+###
+
+# фильтрация по создателю
+GET {{baseUrl}}/advertisements/?creator=1
+Content-Type: application/json
+
+###
+
+# фильтрация по дате
+GET {{baseUrl}}/advertisements/?created_at_after=2024-09-01
+Content-Type: application/json
+
+###
+
+# фильтрация по статусу (неавторизованные пользователи видят только открытые объявления)
+GET {{baseUrl}}/advertisements/?status=CLOSED
+Content-Type: application/json
+Authorization: Token 2ce6ae3f038b38d9e6ab860771476d729fc3bcd6
+
+
+###
+
+# добавляем запись в избранное
+POST {{baseUrl}}/advertisements/2/add_to_favorites/
+Content-Type: application/json
+Authorization: Token 2ce6ae3f038b38d9e6ab860771476d729fc3bcd6
+
+###
+
+# просмотр всех избранных записей
+GET {{baseUrl}}/advertisements/list_favorites/
+Content-Type: application/json
+Authorization: Token 2ce6ae3f038b38d9e6ab860771476d729fc3bcd6
+
+###
+
+# получение объявлений не создателем (проверка DRAFT)
+# *нужно создать не админинстратора
+GET {{baseUrl}}/advertisements/
+Content-Type: application/json
+Authorization: Token 0fa88b3bc8498607890cc8fd867af70a414f0ff4
